@@ -1,0 +1,29 @@
+15:40:00 **** Build of configuration Debug for project iMongoStore ****
+make all 
+Building file: ../I-Mongo-Store/iMongoStore.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"I-Mongo-Store/iMongoStore.d" -MT"I-Mongo-Store/iMongoStore.o" -o "I-Mongo-Store/iMongoStore.o" "../I-Mongo-Store/iMongoStore.c"
+Finished building: ../I-Mongo-Store/iMongoStore.c
+ 
+Building file: ../I-Mongo-Store/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"I-Mongo-Store/utils.d" -MT"I-Mongo-Store/utils.o" -o "I-Mongo-Store/utils.o" "../I-Mongo-Store/utils.c"
+../I-Mongo-Store/utils.c: In function ???esperar_cliente???:
+../I-Mongo-Store/utils.c:49:69: warning: pointer targets in passing argument 3 of ???accept??? differ in signedness [-Wpointer-sign]
+  int socket_cliente = accept(socket_servidor, (void*) &dir_cliente, &tam_direccion);
+                                                                     ^
+In file included from ../I-Mongo-Store/../I-Mongo-Store/utils.h:6:0,
+                 from ../I-Mongo-Store/utils.c:8:
+/usr/include/i386-linux-gnu/sys/socket.h:243:12: note: expected ???socklen_t * restrict {aka unsigned int * restrict}??? but argument is of type ???int *???
+ extern int accept (int __fd, __SOCKADDR_ARG __addr,
+            ^
+Finished building: ../I-Mongo-Store/utils.c
+ 
+Building target: iMongoStore
+Invoking: GCC C Linker
+gcc  -o "iMongoStore"  ./I-Mongo-Store/iMongoStore.o ./I-Mongo-Store/utils.o   -lcommons -lreadline
+Finished building target: iMongoStore
+ 
+
+15:40:01 Build Finished (took 330ms)
+

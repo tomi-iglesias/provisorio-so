@@ -1,0 +1,29 @@
+15:51:10 **** Incremental Build of configuration Debug for project miRamHQ ****
+make all 
+Building file: ../MI RAM HQ/miRamHQ.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"MI RAM HQ/miRamHQ.d" -MT"MI\ RAM\ HQ/miRamHQ.d" -o "MI RAM HQ/miRamHQ.o" "../MI RAM HQ/miRamHQ.c"
+Finished building: ../MI RAM HQ/miRamHQ.c
+ 
+Building file: ../MI RAM HQ/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"MI RAM HQ/utils.d" -MT"MI\ RAM\ HQ/utils.d" -o "MI RAM HQ/utils.o" "../MI RAM HQ/utils.c"
+../MI RAM HQ/utils.c: In function ???esperar_cliente???:
+../MI RAM HQ/utils.c:42:69: warning: pointer targets in passing argument 3 of ???accept??? differ in signedness [-Wpointer-sign]
+  int socket_cliente = accept(socket_servidor, (void*) &dir_cliente, &tam_direccion);
+                                                                     ^
+In file included from ../MI RAM HQ/../MI RAM HQ/utils.h:6:0,
+                 from ../MI RAM HQ/utils.c:1:
+/usr/include/i386-linux-gnu/sys/socket.h:243:12: note: expected ???socklen_t * restrict {aka unsigned int * restrict}??? but argument is of type ???int *???
+ extern int accept (int __fd, __SOCKADDR_ARG __addr,
+            ^
+Finished building: ../MI RAM HQ/utils.c
+ 
+Building target: miRamHQ
+Invoking: GCC C Linker
+gcc  -o "miRamHQ"  ./MI\ RAM\ HQ/miRamHQ.o ./MI\ RAM\ HQ/utils.o   -lreadline -lcommons
+Finished building target: miRamHQ
+ 
+15:53:31 **** Incremental Build of configuration Debug for project miRamHQ ****
+make all 
+make: Nothing to be done for 'all'.
